@@ -1,0 +1,24 @@
+{
+  "name": "getsitecontrol-colorscheme",
+  "description": "",
+  "main": "scheme.js",
+  "authors": [
+    "arusanov <alexander.rusanov@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/getsitecontrol/getsitecontrol-colorScheme",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "version": "1.0.6"
+}

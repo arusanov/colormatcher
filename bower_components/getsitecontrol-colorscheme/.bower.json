@@ -1,0 +1,34 @@
+{
+  "name": "getsitecontrol-colorscheme",
+  "description": "",
+  "main": "scheme.js",
+  "authors": [
+    "arusanov <alexander.rusanov@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/getsitecontrol/getsitecontrol-colorScheme",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "version": "1.0.6",
+  "_release": "1.0.6",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.6",
+    "commit": "22015e60c484eb2e9a224f46947ea4e5c8f2099e"
+  },
+  "_source": "git@github.com:getsitecontrol/getsitecontrol-colorScheme.git",
+  "_target": "v1.0.6",
+  "_originalSource": "git@github.com:getsitecontrol/getsitecontrol-colorScheme.git",
+  "_direct": true
+}

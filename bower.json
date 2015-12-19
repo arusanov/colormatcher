@@ -1,0 +1,24 @@
+{
+  "name": "color-scheme",
+  "authors": [
+    "arusanov <alexander.rusanov@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "bootstrap": "~3.3.6",
+    "getsitecontrol-colorscheme": "git@github.com:getsitecontrol/getsitecontrol-colorScheme.git#v1.0.6",
+    "vibrant": "*"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "getsitecontrol-colorscheme",
+  "version": "1.0.0",
+  "description": "",
+  "main": [
+    "color.js",
+    "scheme.js"
+  ],
+  "scripts": {
+    "test": "mocha tests/*.spec.js",
+    "convert": "node convert.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/getsitecontrol/getsitecontrol-colorScheme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/getsitecontrol/getsitecontrol-colorScheme/issues"
+  },
+  "homepage": "https://github.com/getsitecontrol/getsitecontrol-colorScheme",
+  "devDependencies": {
+    "mocha": "^2.3.4",
+    "should": "^7.1.1"
+  }
+}

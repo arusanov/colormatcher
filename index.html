@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Color matcher</title>
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
+</head>
+<body ng-controller="AppCtrl as ctrl">
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <section>
+                <h4>Detected colors</h4>
+
+                <div class="colors">
+                    <span ng-repeat="color in ctrl.activeSite().colors" ng-style="{'background-color':color}">
+                    </span>
+                </div>
+            </section>
+            <section>
+                <h4>HUE Complementary colors</h4>
+
+                <div class="colors-pair">
+                    <a href="javascript:void(0)" ng-repeat="colorPair in ctrl.hueVariations"
+                       ng-class="{active:ctrl.activePair==colorPair}"
+                       ng-click="ctrl.schemeFrom(colorPair)">
+                        <span ng-style="{'background-color':colorPair[0]}"></span>
+                        <span ng-style="{'background-color':colorPair[1]}"></span>
+                    </a>
+                </div>
+            </section>
+            <section ng-if="ctrl.activeSite().colors.length>0">
+                <h4>Neural training colors
+                    <span class="text-muted">{{ctrl.activeNeuralVariationIdx+1}} of {{ctrl.neuralVariations.length}}</span>
+                </h4>
+
+                <div class="colors-train">
+                    <a href="javascript:void(0)" ng-class="{active:ctrl.isNeuralActive()}"
+                       ng-click="ctrl.schemeFrom(ctrl.activeNeuralVariation())">
+                        <span ng-style="{'background-color':ctrl.activeNeuralVariation()[0]}"></span>
+                        <span ng-style="{'background-color':ctrl.activeNeuralVariation()[1]}"></span>
+                    </a>
+
+                    <div class="btn-group train-feedback btn-group-lg" role="group" ng-show="ctrl.isNeuralActive()">
+                        <button type="button" class="btn btn-success"
+                                ng-click="ctrl.feedback(ctrl.activeNeuralVariation(),1)">Nice
+                        </button>
+                        <button type="button" class="btn btn-danger"
+                                ng-click="ctrl.feedback(ctrl.activeNeuralVariation(),0)">Ugly
+                        </button>
+                    </div>
+                </div>
+                <div class="train" style="margin-top: 1em">
+                    <p class="text-muted">
+                        Neural network has {{ctrl.sampleCount()}} samples
+                    </p>
+                    <button ng-disabled="ctrl.sampleCount()<30" class="btn btn-default" ng-click="ctrl.trainNetwork()">
+                        Train network
+                    </button>
+                    <div ng-if="ctrl.isTraining" class="progress" style="margin-top: 1em">
+                        <div class="progress-bar active"
+                             role="progressbar"
+                             aria-valuenow="2"
+                             aria-valuemin="0"
+                             aria-valuemax="100"
+                             style="min-width: 2em; width: {{ctrl.percentTrained}}%;">
+                            {{ctrl.percentTrained}}
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="nets">
+                <div ng-repeat="(key,netColors) in ctrl.netSelectedPairs">
+                    <h6 style="width: 6em;margin: 1em 0 0.3em">{{key}} net best</h6>
+                    <div class="colors-pair">
+                        <a href="javascript:void(0)"  ng-repeat="netColor in netColors track by $index"
+                           ng-class="{active:ctrl.activePair==netColor}"
+                           ng-click="ctrl.schemeFrom(netColor)">
+                            <span ng-style="{'background-color':netColor[0]}"></span>
+                            <span ng-style="{'background-color':netColor[1]}"></span>
+                            <b>{{netColor[2]}}</b>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-md-8">
+            <div class="browser-frame" ng-if="ctrl.activeSite()">
+                <a target="_blank" ng-href="{{ctrl.activeSite().url}}">
+                    <img loader-src="{{ctrl.activeSite().screenshot}}"/>
+                </a>
+
+                <div ng-show="ctrl.scheme" class="widget"
+                     ng-style="{color:ctrl.scheme.textColor,'background-color':ctrl.scheme.backColor}">
+                    <span>Beautiful website widgets</span>
+
+                    <p>Grab your visitors’ attention and lead them to the most important content.</p>
+                    <strong ng-style="{color:ctrl.scheme.buttonTextColor,'background-color':ctrl.scheme.buttonColor}">Try
+                        for free</strong>
+                </div>
+            </div>
+            <div style="margin-top: 1em" class="text-center btn-group">
+                <button class="btn btn-default" ng-click="ctrl.randomSite()">Random site</button>
+                <button class="btn btn-default" ng-click="ctrl.nextSite()">Next site &rarr;</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/getsitecontrol-colorscheme/color.js"></script>
+<script src="bower_components/getsitecontrol-colorscheme/scheme.js"></script>
+<script src="script/lab.js"></script>
+<script src="script/site-colors.js"></script>
+<script src="script/bundle.js"></script>
+<script src="script/brain-0.6.3.js"></script>
+
+<script src="script/app.js"></script>
+<script>
+</script>
+</body>
+</html>

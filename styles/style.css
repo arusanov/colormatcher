@@ -1,0 +1,122 @@
+.container {
+    margin-top: 3em;
+}
+
+.browser-frame img {
+    max-width: 100%;
+    border: solid 1px #cccccc;
+}
+
+img.loading {
+    width: 750px;
+    height: 586px;
+}
+
+.browser-frame a {
+}
+
+.colors span {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    border-radius: 0.3em;
+}
+
+.colors span:not(:last-child) {
+    margin-right: 0.3em;
+}
+
+.colors-pair > a:not(:last-child) {
+    margin-right: 0.3em;
+}
+
+.colors-pair > a {
+    display: inline-table;
+    text-decoration: none;
+    width: 4em;
+    height: 2em;
+    border-radius: 0.3em;
+    overflow: hidden;
+    transition: transform 200ms;
+    border: solid 1px transparent;
+    position: relative;
+}
+
+.colors-train {
+}
+
+.colors-pair > a.active {
+    transform: scale(1.1, 1.1);
+    border: solid 1px #F00;
+}
+
+.colors-pair > a > span {
+    display: table-cell;
+    width: 2em;
+    height: 2em;
+}
+
+.colors-pair > a > b {
+    position: absolute;
+    color:#fff;
+    display: block;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    vertical-align: middle;
+    line-height: 2em;
+    text-align: center;
+}
+
+.browser-frame {
+    position: relative;
+}
+
+.widget {
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+    max-width: 25em;
+    border-radius: 4px;
+    padding: 1.5em 2em 2em;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .16);
+}
+
+.widget > span {
+    display: block;
+    font-weight: 700;
+    font-size: 125%;
+    margin-bottom: 0.75em;
+}
+
+.widget > strong {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 125%;
+    padding: 0.5em 0.7em;
+    border-radius: 0.2em;
+}
+
+.colors-train {
+    display: flex;
+    align-items: center;
+}
+
+.colors-train > a {
+    display: inline-table;
+    text-decoration: none;
+    width: 8em;
+    height: 4em;
+    border-radius: 0.3em;
+    overflow: hidden;
+    margin-right: 3em;
+}
+
+.colors-train > a.active {
+    border: solid 1px #F00;
+}
+
+.colors-train > a > span {
+    display: table-cell;
+}
